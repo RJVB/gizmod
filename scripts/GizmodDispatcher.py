@@ -145,9 +145,9 @@ class GizmodDispatcher(GizmodEventHandler):
 		Default Constructor
 		"""
 
-		# version check
-		if not Gizmod.checkVersion(VERSION_REQUIRED, True):
-			print "Script Version mismatch -- Gizmo Daemon v" + str(VERSION_REQUIRED) + " Required."
+		# version check - assume that we'll continue to work with newer versions
+		if not Gizmod.checkVersion(VERSION_REQUIRED, False):
+			print("Script Version mismatch -- Gizmo Daemon v" + str(VERSION_REQUIRED) + " Required.")
 			Gizmod.signalShutdown()
 
 		# Must explicitely call the base's constructor
