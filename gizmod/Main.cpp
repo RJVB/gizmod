@@ -53,8 +53,8 @@ using namespace boost::filesystem;
  * Instantiate the main object, and run
 **/
 int main (int argc, char * argv []) {
-	// set filesystem to native filesystem checking
-	path::default_name_check(native);
+// 	// set filesystem to native filesystem checking
+// 	path::default_name_check(native);
 	
 	bool ReloadGizmod;
 	do {

@@ -47,12 +47,12 @@ include_directories(
 	${includes} 
 	${CMAKE_BINARY_DIR}
 	${LIBVISUAL_INCLUDE_DIR}
-	${BOOST_INCLUDE_DIRS}
+	${Boost_INCLUDE_DIRS}
 	${PYTHON_INCLUDE_PATH}
 )
 
 add_definitions(
-	${BOOST_DEFINITIONS}
+	${Boost_DEFINITIONS}
 	${LIBVISUAL_DEFINITIONS}
 )
 
@@ -71,7 +71,7 @@ add_library(actor_gizmod SHARED
 ##############
 
 link_directories(
-	${BOOST_LIBRARY_DIRS}
+	${Boost_LIBRARY_DIRS}
 	${GIZMOD_BINARY_DIR}/libH
 	${GIZMOD_BINARY_DIR}/libGizmod
 )
