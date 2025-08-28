@@ -96,7 +96,7 @@ using namespace H;
  * \def    HOME_SCRIPT_DIR
  * \brief  The default path of the users home script dir
 **/
-#define HOME_SCRIPT_DIR		"~/.gizmod/"
+#define HOME_SCRIPT_DIR		"~/.config/gizmod/"
 
 /** 
  * \def    CONFIG_FILE_PATH
