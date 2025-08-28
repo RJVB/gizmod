@@ -57,11 +57,11 @@ class PowermateDefault(GizmoScriptDefault):
 		See GizmodDispatcher.onEvent documention for an explanation of this function
 		"""
 
-	   	# Check for rotations
+		# Check for rotations
 		if Event.Type == GizmoEventType.EV_REL:
 			if not Gizmo.getKeyState(GizmoKey.BTN_0):
-		   		if Gizmod.DefaultMixerVolume:
-		   			Gizmod.DefaultMixerVolume.VolumePlayback = Gizmod.DefaultMixerVolume.VolumePlayback + Event.Value
+				if Gizmod.DefaultMixerVolume:
+					Gizmod.DefaultMixerVolume.VolumePlayback = Gizmod.DefaultMixerVolume.VolumePlayback + Event.Value
 			else:
 				# scroll quickly (by pages using the page up / page down keys)
 				if Event.Value < 0:

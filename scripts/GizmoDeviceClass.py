@@ -75,13 +75,13 @@ class GizmoDeviceClass:
 		
 		#print "onQueryDeviceType: " + DeviceInfo.DeviceName + " [" + DeviceInfo.FileName + "] Prod: " + str(hex(DeviceInfo.DeviceIDProduct))
 		if [i for i in POWERMATE_GIZMOS if DeviceInfo.DeviceName.lower().find(i) > -1]:
- 			self.DeviceClass = GizmoClass.Powermate
+			self.DeviceClass = GizmoClass.Powermate
 		elif [i for i in ATIX10_GIZMOS if DeviceInfo.DeviceName.lower().find(i) > -1]:
-	 		self.DeviceClass = GizmoClass.ATIX10
+			self.DeviceClass = GizmoClass.ATIX10
 		elif [i for i in LIRC_GIZMOS if DeviceInfo.DeviceName.lower().find(i) > -1]:
-	 		self.DeviceClass = GizmoClass.LIRC
-	 	else:
-	 		self.DeviceClass = GizmoClass.Standard
+			self.DeviceClass = GizmoClass.LIRC
+		else:
+			self.DeviceClass = GizmoClass.Standard
 
 	############################
 	# Private Functions

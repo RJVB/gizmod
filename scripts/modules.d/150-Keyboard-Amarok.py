@@ -59,47 +59,47 @@ class KeyboardAmarok(GizmoScriptRunningApplication):
 		"""
 		
 		# process the key
-	   	if Event.Code == GizmoKey.KEY_VOLUMEUP:
-   			Gizmod.DefaultMixerVolume.VolumePlayback = Gizmod.DefaultMixerVolume.VolumePlayback + 1
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_VOLUMEDOWN:
-   			Gizmod.DefaultMixerVolume.VolumePlayback = Gizmod.DefaultMixerVolume.VolumePlayback - 1
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_MUTE:
-   			Gizmod.toggleMuteAllCards()
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_NEXTSONG:
-   			subprocess.Popen(["amarok", "--next"])
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_NEXT:
-   			subprocess.Popen(["amarok", "--next"])
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_STOP:
-   			subprocess.Popen(["amarok", "--stop"])
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_PREVIOUSSONG:
-   			subprocess.Popen(["amarok", "--previous"])
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_PREVIOUS:
-   			subprocess.Popen(["amarok", "--previous"])
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_PAUSE:
-   			subprocess.Popen(["amarok", "--play-pause"])
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_PLAYPAUSE:
-   			subprocess.Popen(["amarok", "--play-pause"])
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_PAUSECD:
-   			subprocess.Popen(["amarok", "--play-pause"])
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_PLAY:
-   			subprocess.Popen(["amarok", "--play-pause"])
-	   		return True
-	   	elif Event.Code == GizmoKey.KEY_PLAYCD:
-   			subprocess.Popen(["amarok", "--play-pause"])
-	   		return True
-	   	else:
-	   		# unmatched event, keep processing
+		if Event.Code == GizmoKey.KEY_VOLUMEUP:
+			Gizmod.DefaultMixerVolume.VolumePlayback = Gizmod.DefaultMixerVolume.VolumePlayback + 1
+			return True
+		elif Event.Code == GizmoKey.KEY_VOLUMEDOWN:
+			Gizmod.DefaultMixerVolume.VolumePlayback = Gizmod.DefaultMixerVolume.VolumePlayback - 1
+			return True
+		elif Event.Code == GizmoKey.KEY_MUTE:
+			Gizmod.toggleMuteAllCards()
+			return True
+		elif Event.Code == GizmoKey.KEY_NEXTSONG:
+			subprocess.Popen(["amarok", "--next"])
+			return True
+		elif Event.Code == GizmoKey.KEY_NEXT:
+			subprocess.Popen(["amarok", "--next"])
+			return True
+		elif Event.Code == GizmoKey.KEY_STOP:
+			subprocess.Popen(["amarok", "--stop"])
+			return True
+		elif Event.Code == GizmoKey.KEY_PREVIOUSSONG:
+			subprocess.Popen(["amarok", "--previous"])
+			return True
+		elif Event.Code == GizmoKey.KEY_PREVIOUS:
+			subprocess.Popen(["amarok", "--previous"])
+			return True
+		elif Event.Code == GizmoKey.KEY_PAUSE:
+			subprocess.Popen(["amarok", "--play-pause"])
+			return True
+		elif Event.Code == GizmoKey.KEY_PLAYPAUSE:
+			subprocess.Popen(["amarok", "--play-pause"])
+			return True
+		elif Event.Code == GizmoKey.KEY_PAUSECD:
+			subprocess.Popen(["amarok", "--play-pause"])
+			return True
+		elif Event.Code == GizmoKey.KEY_PLAY:
+			subprocess.Popen(["amarok", "--play-pause"])
+			return True
+		elif Event.Code == GizmoKey.KEY_PLAYCD:
+			subprocess.Popen(["amarok", "--play-pause"])
+			return True
+		else:
+			# unmatched event, keep processing
 			return False				
 	
 	############################

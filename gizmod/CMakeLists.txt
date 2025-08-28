@@ -35,7 +35,11 @@ find_package(Boost REQUIRED COMPONENTS program_options)
 	if (NOT Boost_PROGRAM_OPTIONS_FOUND)
 		message(FATAL_ERROR "Boost program_options was not found!\nPlease check your boost development library installation.")
 	endif (NOT Boost_PROGRAM_OPTIONS_FOUND)
-find_package(PythonLibs REQUIRED)
+if (PYTHON_VERSION)
+	find_package(PythonLibs ${PYTHON_VERSION} EXACT REQUIRED)
+else()
+	find_package(PythonLibs REQUIRED)
+endif()
 
 #################################
 # Compiler Switches

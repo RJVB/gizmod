@@ -61,11 +61,11 @@ class ATIX10Intercept(GizmoScriptDefault):
 		# process the key
 		if Event.Value != 0:
 			# do button presses
-		   	if Event.Code == GizmoKey.KEY_BOOKMARKS and self.AltTabber.isAltTabbing():
-		   		self.AltTabber.doAltTab()
-		   		return True
-		   	else:
-		   		# Event not mappped
+			if Event.Code == GizmoKey.KEY_BOOKMARKS and self.AltTabber.isAltTabbing():
+				self.AltTabber.doAltTab()
+				return True
+			else:
+				# Event not mappped
 				return False
 		# event not of interest
 		return False

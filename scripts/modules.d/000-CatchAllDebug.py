@@ -65,9 +65,9 @@ class CatchAllDebug(GizmoScriptEnableChecker):
 		
 		# debug mode enabled so print the event
 		if Event.Class == GizmoEventClass.WindowFocus:
-			print "onEvent: " + str(Event.Class) + " [" + str(Event.WindowEventType) + "] -- <WindowTitle:" + Event.WindowName + "> <FormalName:" + Event.WindowNameFormal + "> <Class:" + Event.WindowClass + ">"
+			print("onEvent: " + str(Event.Class) + " [" + str(Event.WindowEventType) + "] -- <WindowTitle:" + Event.WindowName + "> <FormalName:" + Event.WindowNameFormal + "> <Class:" + Event.WindowClass + ">")
 		elif Event.Class == GizmoEventClass.LIRC:
-			print "onEvent: " + str(Event.Class) + " -- " + Gizmo.FileName + " | [" + Event.Code + "] " + Event.Button + " <" + Event.Remote + "> Repeat: " + str(Event.Repeat)
+			print("onEvent: " + str(Event.Class) + " -- " + Gizmo.FileName + " | [" + Event.Code + "] " + Event.Button + " <" + Event.Remote + "> Repeat: " + str(Event.Repeat))
 		elif Event.Class == GizmoEventClass.SoundCard:
 			if Event.Mixer:
 				sys.stdout.write("onEvent: " + str(Event.Class) + " -- " + str(Event.Type) + " [" + str(Event.SoundCard.CardName) + "] <" + str(Event.Mixer.Name) + ">")
@@ -80,7 +80,7 @@ class CatchAllDebug(GizmoScriptEnableChecker):
 						sys.stdout.write(" Mute")
 				sys.stdout.write("\n")
 			else:
-				print "onEvent: " + str(Event.Class) + " -- " + str(Event.Type) + " [" + str(Event.SoundCard.CardName) + "]"
+				print("onEvent: " + str(Event.Class) + " -- " + str(Event.Type) + " [" + str(Event.SoundCard.CardName) + "]")
 		elif Event.Class == GizmoEventClass.CPUUsage:
 			#for lp in range(Event.NumCPUs):
 			#	print "onEvent: " + str(Event.Class) + " [" + str(lp) + "] " + str(Event.getCPUUsage(lp)) + " -- " + str(Event.getCPUUsageAvg(lp))
@@ -94,11 +94,11 @@ class CatchAllDebug(GizmoScriptEnableChecker):
 		else:
 			if Event.Type == GizmoEventType.EV_KEY:
 				if Event.Class == GizmoEventClass.Powermate and Event.Value == 0:
-					print "onEvent: " + str(Event.Class) + " -- " + Gizmo.FileName + " | [" + str(Event.Type) + "] <" + str(Event.Code) + "> c: " + str(hex(Event.RawCode)) + " v: " + str(hex(Event.Value)) + " Duration: " + str(Event.ClickTime)
+					print("onEvent: " + str(Event.Class) + " -- " + Gizmo.FileName + " | [" + str(Event.Type) + "] <" + str(Event.Code) + "> c: " + str(hex(Event.RawCode)) + " v: " + str(hex(Event.Value)) + " Duration: " + str(Event.ClickTime))
 				else:
-					print "onEvent: " + str(Event.Class) + " -- " + Gizmo.FileName + " | [" + str(Event.Type) + "] <" + str(Event.Code) + "> c: " + str(hex(Event.RawCode)) + " v: " + str(hex(Event.Value))
+					print("onEvent: " + str(Event.Class) + " -- " + Gizmo.FileName + " | [" + str(Event.Type) + "] <" + str(Event.Code) + "> c: " + str(hex(Event.RawCode)) + " v: " + str(hex(Event.Value)))
 			else:
-				print "onEvent: " + str(Event.Class) + " -- " + Gizmo.FileName + " | [" + str(Event.Type) + "] c: " + str(hex(Event.RawCode)) +  " Val: " + str(hex(Event.Value))					
+				print("onEvent: " + str(Event.Class) + " -- " + Gizmo.FileName + " | [" + str(Event.Type) + "] c: " + str(hex(Event.RawCode)) +  " Val: " + str(hex(Event.Value)))					
 				
 		# return False always so that events continue to get processed by other scripts
 		return False

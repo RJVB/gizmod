@@ -57,9 +57,9 @@ class PowermateFirefox(GizmoScriptActiveApplication):
 		See GizmodDispatcher.onEvent documention for an explanation of this function
 		"""
 		
-	   	# Only interact with Firefox if it's the first Powermate
-	  	if Gizmo.DeviceClassID == 0:
-		   	# Check for rotations
+		# Only interact with Firefox if it's the first Powermate
+		if Gizmo.DeviceClassID == 0:
+			# Check for rotations
 			if Event.Type == GizmoEventType.EV_REL:
 				# scroll the window slowly if the button isn't pressed
 				# and fast if the button is down

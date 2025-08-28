@@ -1,3 +1,5 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+option(PYTHON_VERSION
+	"The exact Python version against which we should be built" OFF)

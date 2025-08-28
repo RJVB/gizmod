@@ -87,10 +87,10 @@ class VisualizerDefault:
 		if (self.Visualization == VisualizationType.Volume or self.VolumeInterruptsOthers) \
 		   and Event.Class == GizmoEventClass.SoundCard \
 		   and Event.Type == AlsaEventType.MixerElementChange:
-		   	# if we're an interruption, mark the occasion
-		   	self.InterruptCount = INTERRUPT_LENGTH
-		   	
-		   	# check for volume changed
+			# if we're an interruption, mark the occasion
+			self.InterruptCount = INTERRUPT_LENGTH
+			
+			# check for volume changed
 			if Event.VolumePlaybackChanged \
 			   and Gizmod.DefaultMixerVolume \
 			   and Event.Mixer.Name == Gizmod.DefaultMixerVolume.Name:
@@ -106,14 +106,14 @@ class VisualizerDefault:
 		elif self.Visualization == VisualizationType.CPUUsage \
 		   and Event.Class == GizmoEventClass.CPUUsage\
 		   and not (Gizmod.DefaultMixerSwitch and (not Gizmod.DefaultMixerSwitch.SwitchPlayback)):
-		   	if not self.InterruptCount:
+			if not self.InterruptCount:
 				self.applyVisualizationCPUUsage(Event)
 
 		# check for Sound Visualization events
 		elif self.Visualization == VisualizationType.SoundVisualization \
 		   and Event.Class == GizmoEventClass.SoundVisualization \
 		   and not (Gizmod.DefaultMixerSwitch and (not Gizmod.DefaultMixerSwitch.SwitchPlayback)):
-		   	if not self.InterruptCount:
+			if not self.InterruptCount:
 				self.applyVisualizationSound(Event)
 
 		return False

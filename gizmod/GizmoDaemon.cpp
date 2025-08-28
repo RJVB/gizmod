@@ -1329,7 +1329,7 @@ void GizmoDaemon::initGizmod() {
 void GizmoDaemon::initPython() {
 	try {
 		cdbg1 << "Embedding Python Interpreter..." << endl;
-		PyImport_AppendInittab((char *) "GizmoDaemon", &initGizmoDaemon);
+		PyImport_AppendInittab((char *) "GizmoDaemon", &PyInit_GizmoDaemon);
 		
 		// initialize python and threads
 		Py_Initialize();

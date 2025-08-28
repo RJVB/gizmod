@@ -63,8 +63,8 @@ class GizmoScriptActiveApplication(GizmoScriptDefault):
 		if [i for i in self.InterestedWindows if Gizmod.CurrentFocus.WindowName.lower().find(i) > -1]:
 			# process the key
 			return self.onDeviceEvent(Event, Gizmo)
-	   	else:
-	   		# unmatched event, keep processing
+		else:
+			# unmatched event, keep processing
 			return False				
 	
 	############################

@@ -58,9 +58,9 @@ class MomoRacing(GizmoScriptDefault):
 		See GizmodDispatcher.onEvent documention for an explanation of this function
 		"""
 		
-	   	# Only interact with Racing if it's the first Momo
-	  	if Gizmo.DeviceIDVendor in INTERESTED_VENDORS and Gizmo.DeviceIDProduct in INTERESTED_PRODUCTS:
-		   	# Check for pedals
+		# Only interact with Racing if it's the first Momo
+		if Gizmo.DeviceIDVendor in INTERESTED_VENDORS and Gizmo.DeviceIDProduct in INTERESTED_PRODUCTS:
+			# Check for pedals
 			if Event.Type == GizmoEventType.EV_ABS and Event.Code == 0x01:
 				self.scrollSpeed = 0x7f - Event.Value
 				self.setScrolling()

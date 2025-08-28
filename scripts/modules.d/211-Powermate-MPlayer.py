@@ -56,9 +56,9 @@ class PowermateMPlayer(GizmoScriptActiveApplication):
 		See GizmodDispatcher.onEvent documention for an explanation of this function
 		"""
 		
-	   	# Only interact with MPlayer if it's the first Powermate
-	  	if Gizmo.DeviceClassID == 0:
-		   	# Check for rotations
+		# Only interact with MPlayer if it's the first Powermate
+		if Gizmo.DeviceClassID == 0:
+			# Check for rotations
 			if Event.Type == GizmoEventType.EV_REL:
 				# scroll the window slowly if the button isn't pressed
 				# and fast if the button is down
@@ -77,7 +77,7 @@ class PowermateMPlayer(GizmoScriptActiveApplication):
 			elif Event.Type == GizmoEventType.EV_KEY:
 				if Event.Value == 0 and not Gizmo.Rotated:
 					Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_SPACE)
-		   			return True
+					return True
 		return False
 	
 	############################

@@ -63,8 +63,8 @@ class GizmoScriptRunningApplication(GizmoScriptDefault):
 		if Gizmod.isProcessRunning(self.InterestedApplication) >= 0:
 			# process the key
 			return self.onDeviceEvent(Event, Gizmo)
-	   	else:
-	   		# unmatched event, keep processing
+		else:
+			# unmatched event, keep processing
 			return False				
 	
 	############################

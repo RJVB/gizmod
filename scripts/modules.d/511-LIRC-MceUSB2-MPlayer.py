@@ -64,115 +64,115 @@ class LIRCMceUSB2MPlayer(GizmoScriptActiveApplication):
 			return False
 
 		# process the key
-	   	if   Event.Button == "Power":
+		if   Event.Button == "Power":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_ESC)
-	   		return True
-	   	elif Event.Button == "TV":
+			return True
+		elif Event.Button == "TV":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_A)
-	   		return True
-	   	elif Event.Button == "Music":
+			return True
+		elif Event.Button == "Music":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_B)
-	   		return True
-	   	elif Event.Button == "Pictures":
+			return True
+		elif Event.Button == "Pictures":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_V)
-	   		return True
-	   	elif Event.Button == "Videos":
+			return True
+		elif Event.Button == "Videos":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_SLASH, [GizmoKey.KEY_RIGHTSHIFT])
-	   		return True
-	   	elif Event.Button == "Stop":
+			return True
+		elif Event.Button == "Stop":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_S)
-	   		return True
-	   	elif Event.Button == "Record":
+			return True
+		elif Event.Button == "Record":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_R)
-	   		return True
-	   	elif Event.Button == "Pause":
+			return True
+		elif Event.Button == "Pause":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_SPACE)
-	   		return True
-	   	elif Event.Button == "Rewind":
+			return True
+		elif Event.Button == "Rewind":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_LEFT)
-	   		return True
-	   	elif Event.Button == "Play":
+			return True
+		elif Event.Button == "Play":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_SPACE)
-	   		return True
-	   	elif Event.Button == "Forward":
+			return True
+		elif Event.Button == "Forward":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_RIGHT)
-	   		return True
-	   	elif Event.Button == "Replay":
+			return True
+		elif Event.Button == "Replay":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_PAGEDOWN)
-	   		return True
-	   	elif Event.Button == "Back":
-	   		return False
-	   	elif Event.Button == "Up":
-	   		return False
-	   	elif Event.Button == "Skip":
+			return True
+		elif Event.Button == "Back":
+			return False
+		elif Event.Button == "Up":
+			return False
+		elif Event.Button == "Skip":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_PAGEUP)
-	   		return True
-	   	elif Event.Button == "More":
+			return True
+		elif Event.Button == "More":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_O)
-	   		return True
-	   	elif Event.Button == "Left":
-	   		return False
-	   	elif Event.Button == "OK":
+			return True
+		elif Event.Button == "Left":
+			return False
+		elif Event.Button == "OK":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_SPACE)
-	   		return True
-	   	elif Event.Button == "Right":
-	   		return False
-	   	elif Event.Button == "Down":
-	   		return False
+			return True
+		elif Event.Button == "Right":
+			return False
+		elif Event.Button == "Down":
+			return False
 		elif Event.Button == "VolUp":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_0)
 			return True
-	   	elif Event.Button == "VolDown":
+		elif Event.Button == "VolDown":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_9)
 			return True		
-	   	elif Event.Button == "Home":
-	   		return False
-	   	elif Event.Button == "ChanUp":
-	   		return False
-	   	elif Event.Button == "ChanDown":
-	   		return False
-	   	elif Event.Button == "RecTV":
-	   		return False
-	   	elif Event.Button == "Mute":
-	   		return False
-	   	elif Event.Button == "DVD":
+		elif Event.Button == "Home":
+			return False
+		elif Event.Button == "ChanUp":
+			return False
+		elif Event.Button == "ChanDown":
+			return False
+		elif Event.Button == "RecTV":
+			return False
+		elif Event.Button == "Mute":
+			return False
+		elif Event.Button == "DVD":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_N)
-	   		return True
-	   	elif Event.Button == "Guide":
+			return True
+		elif Event.Button == "Guide":
 			Gizmod.Keyboards[0].createEvent(GizmoEventType.EV_KEY, GizmoKey.KEY_S)
-	   		return True
-	   	elif Event.Button == "LiveTV":
-	   		return False
-	   	elif Event.Button == "One":
-	   		return False
-	   	elif Event.Button == "Two":
-	   		return False
-	   	elif Event.Button == "Three":
-	   		return False
-	   	elif Event.Button == "Four":
-	   		return False
-	   	elif Event.Button == "Five":
-	   		return False
-	   	elif Event.Button == "Six":
-	   		return False
-	   	elif Event.Button == "Seven":
-	   		return False
-	   	elif Event.Button == "Eight":
-	   		return False
-	   	elif Event.Button == "Nine":
-	   		return False
-	   	elif Event.Button == "Star":
-	   		return False
-	   	elif Event.Button == "Zero":
-	   		return False
-	   	elif Event.Button == "Hash":
-	   		return False
-	   	elif Event.Button == "Clear":
-	   		return False
-	   	elif Event.Button == "Enter":
-	   		return False
-	   	else:
-	   		# unmatched event, keep processing
+			return True
+		elif Event.Button == "LiveTV":
+			return False
+		elif Event.Button == "One":
+			return False
+		elif Event.Button == "Two":
+			return False
+		elif Event.Button == "Three":
+			return False
+		elif Event.Button == "Four":
+			return False
+		elif Event.Button == "Five":
+			return False
+		elif Event.Button == "Six":
+			return False
+		elif Event.Button == "Seven":
+			return False
+		elif Event.Button == "Eight":
+			return False
+		elif Event.Button == "Nine":
+			return False
+		elif Event.Button == "Star":
+			return False
+		elif Event.Button == "Zero":
+			return False
+		elif Event.Button == "Hash":
+			return False
+		elif Event.Button == "Clear":
+			return False
+		elif Event.Button == "Enter":
+			return False
+		else:
+			# unmatched event, keep processing
 			return False				
 	
 	############################

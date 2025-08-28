@@ -58,7 +58,7 @@ class PowermateButtonTimeout(GizmoScriptDefault):
 		See GizmodDispatcher.onEvent documention for an explanation of this function
 		"""
 
-	   	# Check for rotations
+		# Check for rotations
 		if Event.Type == GizmoEventType.EV_KEY:
 			if Event.Value == 1:
 				#print "Powermate Button Timeout Timer Created [" + str(POWERMATE_BUTTON_TIMEOUT) + "s]"

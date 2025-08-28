@@ -105,28 +105,28 @@ class GizmoRegistrar:
 			for item in Gizmod.Keyboards:
 				if item.FileName == self.Device.FileName:
 					Gizmod.Keyboards.remove(item)
-					print "Removed Keyboard Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]"
+					print("Removed Keyboard Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]")
 		elif self.DeviceType == DeviceType.Mouse:
 			for item in Gizmod.Mice:
 				if item.FileName == self.Device.FileName:
 					Gizmod.Mice.remove(item)
-					print "Removed Mouse Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]"
+					print("Removed Mouse Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]")
 		elif self.DeviceType == DeviceType.Powermate:
 			for item in Gizmod.Powermates:
 				if item.FileName == self.Device.FileName:
 					Gizmod.Powermates.remove(item)
-					print "Removed Powermate Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]"
+					print("Removed Powermate Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]")
 		elif self.DeviceType == DeviceType.ATIX10:
 			# unset exlusive mode
 			self.Device.grabExclusiveAccess(False)
 			for item in Gizmod.ATIX10Remotes:
 				if item.FileName == self.Device.FileName:
 					Gizmod.ATIX10Remotes.remove(item)
-					print "Removed ATI X10 Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]"
+					print("Removed ATI X10 Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]")
 		elif self.DeviceType == DeviceType.LIRC:
-			print "Removed LIRC Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]"
+			print("Removed LIRC Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]")
 		else:
-			print "Removed Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]"
+			print("Removed Device: " + self.Device.DeviceName + " [" + self.Device.FileName + "]")
 			
 	############################
 	# Private Functions

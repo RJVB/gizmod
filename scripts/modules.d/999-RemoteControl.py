@@ -60,7 +60,7 @@ class RemoteControl(GizmoScriptEnableChecker):
 		try:
 			if not Event.Remote or not Gizmo:
 				return False
-		except AttributeError, msg:
+		except AttributeError as msg:
 			# this is fine
 			return False
 			

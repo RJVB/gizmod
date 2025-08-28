@@ -60,8 +60,8 @@ class GizmoScriptDefault(GizmoScriptEnableChecker):
 		if Event.Class in self.InterestedClasses and len(Gizmod.Mice) and len(Gizmod.Keyboards):
 			# process the key
 			return True
-	   	else:
-	   		# unmatched event, keep processing
+		else:
+			# unmatched event, keep processing
 			return False
 			
 	def onEvent(self, Event, Gizmo = None):

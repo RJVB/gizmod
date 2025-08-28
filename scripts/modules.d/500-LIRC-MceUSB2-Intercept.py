@@ -64,11 +64,11 @@ class LIRCMceUSB2Intercept(GizmoScriptDefault):
 			return False
 
 		# process the key
-	   	if Event.Button == "Home" and self.AltTabber.isAltTabbing():
-	   		self.AltTabber.doAltTab()
-	   		return True
-	   	else:
-	   		# unmatched event, keep processing
+		if Event.Button == "Home" and self.AltTabber.isAltTabbing():
+			self.AltTabber.doAltTab()
+			return True
+		else:
+			# unmatched event, keep processing
 			return False				
 	
 	############################

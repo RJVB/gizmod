@@ -32,7 +32,11 @@ endif(COMMAND cmake_policy)
 ##############
 
 find_package(Boost REQUIRED QUIET)
-find_package(PythonLibs REQUIRED)
+if (PYTHON_VERSION)
+	find_package(PythonLibs ${PYTHON_VERSION} EXACT REQUIRED)
+else()
+	find_package(PythonLibs REQUIRED)
+endif()
 find_package(Libvisual)
 
 #################################
