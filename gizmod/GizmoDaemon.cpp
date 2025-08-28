@@ -629,8 +629,12 @@ GizmoDaemon::~GizmoDaemon() {
 bool GizmoDaemon::checkVersion(double Version, bool Strict) {
 	double VersionDiff = fabs(Version - mVersion);
 	if (Strict) {
+		cdbg << "Required Version" << Version << "daemon version" << mVersion
+			<< "VersionDiff" << VersionDiff << endl;
 		return VersionDiff < 0.1;
 	} else {
+		cdbg << "Minimum required Version" << Version << "daemon version" << mVersion
+			<< "VersionDiff" << Version - 0.05 << endl;
 		if (Version - 0.05 <= mVersion)
 			return true;
 		else
@@ -1113,7 +1117,7 @@ std::string GizmoDaemon::getUserScriptDirPaths() {
 }
 
 /**
- * \brief  Get the program's version information
+ * \brief  Get the program's version information (ignoring the patchlevel!)
  *
  * Note that this is also implemented in Python as a property so it can
  * be accessed as a variable by referencing ".Version"
@@ -2249,25 +2253,25 @@ void GizmoDaemon::setConfigDir() {
 }
 
 /**
- * \brief  Set the version information
+ * \brief  Set the version information (ignoring the patchlevel!)
 **/
 void GizmoDaemon::setVersionInfo() {
 	string Version = VERSION;
 	size_t cPos = Version.find(":");
-	if (cPos == string::npos)
-		cPos = Version.find(".");
-	if (cPos == string::npos) {
-		mVersionMajor = 0;
-		mVersionMinor = 0;
+	char *format = NULL;
+	if (cPos != string::npos) {
+		format = "%d:%d:%d";
 	} else {
-		try {
-			mVersionMajor = lexical_cast<int>(Version.substr(0, cPos));
-			mVersionMinor = lexical_cast<int>(Version.substr(cPos + 1));
-		} catch (bad_lexical_cast const & e) {
-			mVersionMajor = 0;
-			mVersionMinor = 0;
-			return;
+		cPos = Version.find(".");
+		if (cPos != string::npos) {
+			format = "%d.%d.%d";
 		}
+	}
+	mVersionMajor = 0;
+	mVersionMinor = 0;
+	mVersionPatch = 0;
+	if (cPos != string::npos) {
+		sscanf(Version.c_str(), format, &mVersionMajor, &mVersionMinor, &mVersionPatch);
 	}
 	
 	mVersion = double(mVersionMajor) + (double(mVersionMinor) / 10.0);

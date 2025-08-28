@@ -186,6 +186,7 @@ private:
 	double				mVersion;			///< Version
 	int				mVersionMajor;			///< Version majorus
 	int				mVersionMinor;			///< Version minorus
+	int				mVersionPatch;			///< Version patch level
 };
 
 #endif // __GizmoDaemon_h
