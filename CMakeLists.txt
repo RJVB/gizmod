@@ -40,6 +40,9 @@ set(APPLICATION_VERSION "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_
 # Preamble
 ##############
 
+set(CMAKE_CXX_STANDARD 98)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ 
 # is checked
 set(CMAKE_MODULE_PATH
@@ -69,7 +72,7 @@ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 # Sub-directories
 ##############
 
-subdirs(libH libGizmod gizmod scripts visplugin)
+subdirs(libH libGizmod gizmod scripts)
 
 #################################
 # Information
@@ -81,8 +84,7 @@ message(STATUS "Installation Variables:
    Data Dir         (DATA_INSTALL_DIR):     ${DATA_INSTALL_DIR}
    Lib Dir          (LIB_INSTALL_DIR):      ${LIB_INSTALL_DIR}
    Plugin Dir       (PLUGIN_INSTALL_DIR):   ${PLUGIN_INSTALL_DIR}
-   Config Dir       (SYSCONF_INSTALL_DIR):  ${SYSCONF_INSTALL_DIR}
-   Build vis plugin (BUILD_VIS_PLUGIN):     ${BUILD_VIS_PLUGIN}"
+   Config Dir       (SYSCONF_INSTALL_DIR):  ${SYSCONF_INSTALL_DIR}"
 )
 
 #################################

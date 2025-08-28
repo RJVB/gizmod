@@ -31,19 +31,19 @@ endif(COMMAND cmake_policy)
 # Dependencies
 ##############
 
-find_package(Boost REQUIRED QUIET)
-	if (NOT BOOST_FILESYSTEM_FOUND)
+find_package(Boost REQUIRED COMPONENTS filesystem thread python serialization)
+	if (NOT Boost_FILESYSTEM_FOUND)
 		message(FATAL_ERROR "Boost filesystem was not found!\nPlease check your boost development library installation.")
-	endif (NOT BOOST_FILESYSTEM_FOUND)
-	if (NOT BOOST_THREAD-MT_FOUND)
+	endif (NOT Boost_FILESYSTEM_FOUND)
+	if (NOT Boost_THREAD_FOUND)
 		message(FATAL_ERROR "Boost thread was not found!\nPlease check your boost development library installation.")
-	endif (NOT BOOST_THREAD-MT_FOUND)
-	if (NOT BOOST_PYTHON_FOUND)
+	endif (NOT Boost_THREAD_FOUND)
+	if (NOT Boost_PYTHON_FOUND)
 		message(FATAL_ERROR "Boost python was not found!\nPlease check your boost development library installation.")
-	endif (NOT BOOST_PYTHON_FOUND)
-	if (NOT BOOST_SERIALIZATION_FOUND)
+	endif (NOT Boost_PYTHON_FOUND)
+	if (NOT Boost_SERIALIZATION_FOUND)
 		message(FATAL_ERROR "Boost serialization was not found!\nPlease check your boost development library installation.")
-	endif (NOT BOOST_SERIALIZATION_FOUND)
+	endif (NOT Boost_SERIALIZATION_FOUND)
 find_package(PythonLibs REQUIRED)
 find_package(Alsa REQUIRED)
 find_package(X11 REQUIRED)
@@ -57,14 +57,14 @@ find_package(X11 REQUIRED)
 include_directories(
 	${includes} 
 	${CMAKE_BINARY_DIR}
-	${BOOST_INCLUDE_DIRS} 
+	${Boost_INCLUDE_DIRS} 
 	${X11_INCLUDE_DIR}
 	${ALSA_INCLUDES}
 	${PYTHON_INCLUDE_PATH}
 )
 
 add_definitions(
-	${BOOST_DEFINITIONS}
+	${Boost_DEFINITIONS}
 )
 
 #################################
@@ -112,16 +112,16 @@ set_target_properties(Gizmod PROPERTIES VERSION "${CPACK_PACKAGE_VERSION_MAJOR}.
 ##############
 
 link_directories(
-	${BOOST_LIBRARY_DIRS}
+	${Boost_LIBRARY_DIRS}
 	${GIZMOD_BINARY_DIR}/libH
 )
 
 target_link_libraries(Gizmod
 	H
-	${BOOST_FILESYSTEM_LIBRARY}
-	${BOOST_THREAD_LIBRARY}
-	${BOOST_SERIALIZATION_LIBRARY}
-	${BOOST_PYTHON_LIBRARY}
+	${Boost_FILESYSTEM_LIBRARY}
+	${Boost_THREAD_LIBRARY}
+	${Boost_SERIALIZATION_LIBRARY}
+	${Boost_PYTHON_LIBRARY}
 	${PYTHON_LIBRARIES}
 	${ASOUND_LIBRARY}
 	${X11_LIBRARIES}
